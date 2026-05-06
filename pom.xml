@@ -4,7 +4,7 @@
     <groupId>com.example</groupId>
     <artifactId>java-docker-app</artifactId>
     <version>1.0.0</version>
-    <packaging>war</packaging>
+    <packaging>war</packaging>   <!-- Changed to war -->
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -21,9 +21,17 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+
+        <!-- For external Tomcat -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 
     <build>
+        <finalName>java-docker-app</finalName>   <!-- Important: removes version from WAR name -->
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
